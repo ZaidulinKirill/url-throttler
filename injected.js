@@ -12,7 +12,6 @@ window.fetch = async (...args) => {
     args[1].body= JSON.stringify(body)
   }
 
-  console.log("fetch called with args:", args);
   const response = await origFetch(...args);
 
   return response
