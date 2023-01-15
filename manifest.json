@@ -4,9 +4,10 @@
   "version": "0.1",
   "description": "Twitch chat delay control",
   "permissions": [
+		"tabs",
     "activeTab",
     "scripting",
-		"webRequest"
+		"storage"
   ],
 	"action": {
 		"default_title": "Twitch chat delay control",
@@ -19,7 +20,7 @@
 		}
 	],
 	"web_accessible_resources": [{
-		"resources": ["injected.js"],
+		"resources": ["injected.js", "pretty-checkbox.min.css", "vue.min.js"],
 		"matches": ["<all_urls>"]
 	}],
   "background": {
