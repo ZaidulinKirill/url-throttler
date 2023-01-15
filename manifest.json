@@ -1,46 +1,27 @@
 {
-	"manifest_version": 2,
-	"name": "Twitch chat delay control",
-	"description": "Twitch chat delay control",
-	"version": "2.0.0",
-    "icons": {
-		"16": "icon16.png",
-		"48": "icon48.png",
-		"128": "icon128.png"
-	},
-	"permissions": [
-		"tabs",
-		"webRequest",
-		"webRequestBlocking",
-		"storage",
-		"https://*/*",
-		"http://*/*"
-	],
-	"browser_action": {
-		"default_title": "Twitch chat delay control",
-		"default_popup": "popup.html"
-	},
-	"background": {
-		"scripts": ["background.js"]
-	},
-	"content_security_policy": "script-src 'self' 'unsafe-eval' https://cdnjs.cloudflare.com; object-src 'self'"
-}
-
-
-{
   "name": "Twitch chat delay control",
-  "action": {},
   "manifest_version": 3,
   "version": "0.1",
   "description": "Twitch chat delay control",
   "permissions": [
     "activeTab",
-    "scripting"
+    "scripting",
+		"webRequest"
   ],
 	"action": {
 		"default_title": "Twitch chat delay control",
 		"default_popup": "popup.html"
   },
+	"content_scripts": [
+		{
+			"matches": ["https://www.twitch.tv/*"],
+			"js": ["script.js"]
+		}
+	],
+	"web_accessible_resources": [{
+		"resources": ["injected.js"],
+		"matches": ["<all_urls>"]
+	}],
   "background": {
     "service_worker": "background.js"
   }
