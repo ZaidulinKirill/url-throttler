@@ -1,7 +1,6 @@
 <html>
 <head>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.10/vue.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.15/lodash.min.js"></script>
   <script src="popup.js"></script>
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pretty-checkbox/3.0.0/pretty-checkbox.min.css">
@@ -58,13 +57,13 @@
       width: 40px;
     }
 
-    button {
+    /* button {
       background-color: transparent;
       border: 1px solid #8c8c8c;
       padding: 3px 8px;
       border-radius: 4px;
       color: #8c8c8c;
-    }
+    } */
   </style>
 </head>
 <body>
@@ -79,9 +78,9 @@
     </div>
     <div class="field">
       <div class="label">Delay (ms):</div>
-      <input class="input" type="number" v-model="defaultDelay" />
+      <input class="input" type="number" v-model="delay" />
     </div>
-    <div class="field">
+    <!-- <div class="field">
       <div class="label">URLs:</div>
       <div class="label-help">
         URLs must use the <a href="https://developer.chrome.com/docs/extensions/mv2/match_patterns/" target="_blank">Match pattern</a> syntax.
@@ -104,16 +103,16 @@
     <div class="field">
       <button v-on:click="addUrlInput">Add URL</button>
     </div>
-    <hr />
+    <hr /> -->
     <div class="field">
-      <button v-on:click="copyCurrentConfig">Copy Current Config</button>
+      <!-- <button v-on:click="copyCurrentConfig">Copy Current Config</button> -->
       <button v-on:click="applyConfig">Apply New Config</button>
     </div>
-    <div class="field">
+    <!-- <div class="field">
       <em style="color: rgba(53,142,8,.9);">
         <span id="messageDisplay"></span>
       </em>
-    </div>
+    </div> -->
   </div>
 </body>
 </html>
